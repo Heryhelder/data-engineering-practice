@@ -14,21 +14,22 @@ download_uris = [
 ]
 
 async def main():
-    if not os.path.exists('./downloads'):
-        os.makedirs('./downloads')
+    BASE_PATH = os.path.join(os.path.curdir, 'downloads')
+
+    if not os.path.exists(BASE_PATH):
+        os.makedirs(BASE_PATH)
 
     async with aiohttp.ClientSession() as session:
         for uri in download_uris:
             async with session.get(uri) as res:
                 if res.status == 200:
                     file_name = uri.split('/')[3]
-                    path = os.path.join(os.path.curdir, 'downloads')
 
-                    with open(path + '/' + file_name, 'wb') as f:
+                    with open(BASE_PATH + '/' + file_name, 'wb') as f:
                         async for chunk in res.content.iter_chunked(1024):
                             f.write(chunk)
 
-                    await extract_csv(path + '/' + file_name, path)
+                    await extract_csv(BASE_PATH + '/' + file_name, BASE_PATH)
 
 async def extract_csv(file, dest):
     if os.path.exists(file):
