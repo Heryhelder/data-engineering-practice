@@ -79,3 +79,15 @@ usage to real-life problems.
 
 Many times to solve simple problems we have to find and use multiple functions available
 from libraries. This will test your ability to do that.
+
+#### Exercise 8 - Using DuckDB for Analytics and Transforms.
+The [eighth exercise](https://github.com/danielbeach/data-engineering-practice/tree/main/Exercises/Exercise-8) 
+Using new tools is imperative to growing as a Data Engineer. DuckDB is one of those new tools. In this
+exercise you will have to complete a number of analytical and transformation tasks using DuckDB. This
+will require an understanding of the functions and documenation of DuckDB.
+
+#### Exercise 9 - Using Polars lazy computation.
+The [ninth exercise](https://github.com/danielbeach/data-engineering-practice/tree/main/Exercises/Exercise-9) 
+Polars is a new Rust based tool with a wonderful Python package that has taken Data Engineering by
+storm. It's better than Pandas because it has both SQL Context and supports Lazy evalutation 
+for larger than memory data sets! Show your Lazy skills!
